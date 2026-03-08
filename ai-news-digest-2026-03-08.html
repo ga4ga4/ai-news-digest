@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Digest - 2026年3月8日</title>
+    <style>
+        :root { --bg: #0d1117; --bg-card: #161b22; --bg-card-hover: #1c2129; --border: #30363d; --text: #e6edf3; --text-muted: #8b949e; --accent-blue: #58a6ff; --accent-blue-dim: #1f6feb; --accent-green: #3fb950; --accent-purple: #bc8cff; --accent-yellow: #d29922; --jp-accent: #ff4057; --star-filled: #d29922; --star-empty: #30363d; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP', Helvetica, Arial, sans-serif; line-height: 1.7; padding: 2rem 1rem; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { text-align: center; padding: 2rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+        header h1 { font-size: 2rem; background: linear-gradient(135deg, var(--accent-blue), #a371f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem; }
+        header .subtitle { color: var(--text-muted); font-size: 1rem; }
+        header .date { color: var(--accent-blue); font-size: 0.9rem; margin-top: 0.3rem; }
+        nav.toc { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem 1.5rem; margin-bottom: 2rem; }
+        nav.toc h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.8rem; }
+        nav.toc ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; }
+        nav.toc a { color: var(--accent-blue); text-decoration: none; font-size: 0.9rem; }
+        nav.toc a:hover { color: #79c0ff; text-decoration: underline; }
+        .section-header { font-size: 1.4rem; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent-blue-dim); }
+        .section-header.jp { border-bottom-color: var(--jp-accent); }
+        .section-header.tools { border-bottom-color: var(--accent-green); }
+        .section-header.creative { border-bottom-color: var(--accent-purple); }
+        .news-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; transition: background 0.2s, border-color 0.2s; }
+        .news-card:hover { background: var(--bg-card-hover); border-color: var(--accent-blue-dim); }
+        .news-card .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; }
+        .news-card .card-number { background: var(--accent-blue-dim); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.15rem 0.55rem; border-radius: 4px; flex-shrink: 0; margin-right: 0.8rem; }
+        .news-card h3 { font-size: 1.05rem; flex: 1; }
+        .news-card .stars { flex-shrink: 0; margin-left: 0.8rem; font-size: 0.85rem; letter-spacing: 1px; }
+        .star-filled { color: var(--star-filled); } .star-empty { color: var(--star-empty); }
+        .news-card .summary { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 0.6rem; }
+        .news-card .use-case { background: #1a2332; border-left: 3px solid var(--accent-blue); border-radius: 0 4px 4px 0; padding: 0.5rem 0.8rem; margin-bottom: 0.6rem; font-size: 0.85rem; color: var(--accent-blue); }
+        .news-card .use-case strong { color: var(--accent-blue); }
+        .news-card .source { font-size: 0.8rem; color: var(--text-muted); }
+        .news-card .source a { color: var(--accent-blue); text-decoration: none; }
+        .news-card .source a:hover { text-decoration: underline; }
+        .tag { display: inline-block; font-size: 0.7rem; padding: 0.1rem 0.5rem; border-radius: 12px; margin-right: 0.3rem; font-weight: 600; }
+        .tag-service { background: #1f2d5c; color: #79c0ff; } .tag-creative { background: #2d1f3d; color: #bc8cff; } .tag-update { background: #1f3d2a; color: #56d364; } .tag-social { background: #3d2f1f; color: #d29922; }
+        .tool-card { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent-green); border-radius: 0 8px 8px 0; padding: 1rem 1.2rem; margin-bottom: 0.8rem; transition: background 0.2s; }
+        .tool-card:hover { background: var(--bg-card-hover); }
+        .tool-card h4 { font-size: 0.95rem; margin-bottom: 0.4rem; } .tool-card p { color: var(--text-muted); font-size: 0.88rem; }
+        .tool-card .try-it { display: inline-block; margin-top: 0.5rem; font-size: 0.8rem; color: var(--accent-green); text-decoration: none; border: 1px solid var(--accent-green); padding: 0.2rem 0.6rem; border-radius: 4px; transition: background 0.2s; }
+        .tool-card .try-it:hover { background: rgba(63, 185, 80, 0.1); }
+        .jp-card { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--jp-accent); border-radius: 0 8px 8px 0; padding: 1rem 1.2rem; margin-bottom: 0.8rem; }
+        .jp-card h4 { font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--jp-accent); } .jp-card p { color: var(--text-muted); font-size: 0.88rem; }
+        .creative-card { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent-purple); border-radius: 0 8px 8px 0; padding: 1rem 1.2rem; margin-bottom: 0.8rem; }
+        .creative-card h4 { font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--accent-purple); } .creative-card p { color: var(--text-muted); font-size: 0.88rem; }
+        .deep-dive { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; }
+        .deep-dive h4 { font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--accent-blue); } .deep-dive p { color: var(--text-muted); font-size: 0.88rem; }
+        .info-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem 1.5rem; margin: 2rem 0; font-size: 0.85rem; color: var(--text-muted); }
+        .info-box h3 { font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text); }
+        footer { text-align: center; padding: 2rem 0 1rem; border-top: 1px solid var(--border); margin-top: 2rem; color: var(--text-muted); font-size: 0.8rem; }
+        footer a { color: var(--accent-blue); text-decoration: none; }
+        @media (max-width: 600px) { nav.toc ul { grid-template-columns: 1fr; } header h1 { font-size: 1.5rem; } .news-card .card-header { flex-direction: column; } .news-card .stars { margin-left: 0; margin-top: 0.3rem; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI News Digest</h1>
+            <div class="subtitle">今日から使えるAI最新情報</div>
+            <div class="date">2026年3月8日（日）</div>
+        </header>
+        <nav class="toc" id="toc">
+            <h2>📑 目次</h2>
+            <ul>
+                <li><a href="#top5">📰 今週のトップ5ニュース</a></li>
+                <li><a href="#tools">🛠️ 注目の新機能・サービス</a></li>
+                <li><a href="#creative">🎨 クリエイティブAI最前線</a></li>
+                <li><a href="#japan">🇯🇵 日本関連トピック</a></li>
+                <li><a href="#deepdive">💡 知っておくと差がつくポイント</a></li>
+                <li><a href="#reliability">ℹ️ 情報の信頼性について</a></li>
+            </ul>
+        </nav>
+        <h2 class="section-header" id="top5">📰 今週のトップ5ニュース</h2>
+        <div class="news-card">
+            <div class="card-header"><span class="card-number">01</span>
+                <h3>Claude、無料プランでもメモリ機能が利用可能に — ChatGPT・Geminiからの移行機能も</h3>
+                <span class="stars"><span class="star-filled">★★★★★</span></span></div>
+            <p class="summary">Anthropicの「Claude」がメモリ機能を無料プランに開放。会話の好みやコンテキストを覚えてくれるようになった。さらに、ChatGPTやGeminiのメモリをインポートする機能も追加され、乗り換えがスムーズに。</p>
+            <div class="use-case">💡 <strong>こう使える：</strong> 「この前話したプロジェクトの続き」と言うだけで、Claudeが文脈を思い出してくれる。他のAIから移行しても、最初からやり直さなくてOK。</div>
+            <p class="source"><span class="tag tag-update">アップデート</span> <a href="https://forest.watch.impress.co.jp/docs/news/2090007.html" target="_blank">窓の杜</a> / <a href="https://atmarkit.itmedia.co.jp/ait/articles/2603/06/news022.html" target="_blank">＠IT</a></p>
+        </div>
+        <div class="news-card">
+            <div class="card-header"><span class="card-number">02</span>
+                <h3>Google Flow が画像生成・編集・動画を1つに統合 — 「作る」がワンストップに</h3>
+                <span class="stars"><span class="star-filled">★★★★</span><span class="star-empty">★</span></span></div>
+            <p class="summary">GoogleがWhiskとImageFXの画像生成機能をFlowに統合。高品質な画像を生成し、そのままVeo動画の素材として使える。テキストから画像→編集→動画化がひとつのツール内で完結。</p>
+            <div class="use-case">💡 <strong>こう使える：</strong> SNS用のサムネイル画像を作り、そのままショート動画に変換。複数ツールを行き来する手間がなくなる。</div>
+            <p class="source"><span class="tag tag-creative">クリエイティブ</span> <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates-february-2026/" target="_blank">Google Blog</a></p>
+        </div>
+        <div class="news-card">
+            <div class="card-header"><span class="card-number">03</span>
+                <h3>GPT-5.4リリース — PCをAIが直接操作する「コンピュータ操作」機能が標準搭載</h3>
+                <span class="stars"><span class="star-filled">★★★★★</span></span></div>
+            <p class="summary">OpenAIが3月5日にGPT-5.4をリリース。注目はネイティブのコンピュータ操作機能。ブラウザやアプリの画面を見ながらAIが代わりに操作してくれる。100万トークンのコンテキストも実現。</p>
+            <div class="use-case">💡 <strong>こう使える：</strong> 「この表のデータをグラフにしてスライドに入れて」とお願いすると、AIがExcelとPowerPointを操作して仕上げてくれる。</div>
+            <p class="source"><span class="tag tag-service">サービス</span> <a href="https://integratedcognition.com/blog/march-2026s-ai-launch-wave-what-lawyers-should-make-of-gpt-54-claude-sonnet-46-gemini-31-pro-grok-420-glm-5-minimax-m25-and-the-deepseek-question" target="_blank">Integrated Cognition</a></p>
+        </div>
+        <div class="news-card">
+            <div class="card-header"><span class="card-number">04</span>
+                <h3>Apple、AI生成の楽曲にラベル表示を開始 — 3月から段階導入</h3>
+                <span class="stars"><span class="star-filled">★★★★</span><span class="star-empty">★</span></span></div>
+            <p class="summary">Apple Musicが3月からAI生成楽曲を検出しラベル付けする仕組みを導入。アーティストのロイヤリティを保護しつつ、リスナーが人間の作品かAI作品かを判別できるように。</p>
+            <div class="use-case">💡 <strong>こう使える：</strong> 音楽を聴くとき「これAI？人間？」が一目でわかるように。クリエイターにとっては自分の作品が正当に評価される安心感に。</div>
+            <p class="source"><span class="tag tag-social">社会</span> <a href="https://www.crescendo.ai/news/latest-ai-news-and-updates" target="_blank">Crescendo AI</a></p>
+        </div>
+        <div class="news-card">
+            <div class="card-header"><span class="card-number">05</span>
+                <h3>Claude、App StoreでChatGPTを抜き1位に — AI選びの決め手が変化</h3>
+                <span class="stars"><span class="star-filled">★★★★</span><span class="star-empty">★</span></span></div>
+            <p class="summary">AnthropicのClaudeがApp Storeで初の1位獲得。無料ユーザーが年初から60%以上増加、日次新規登録は4倍に。背景にはOpenAIの国防総省契約への反発も。AIを選ぶ基準が「性能」だけでなく「企業の姿勢」にも広がっている。</p>
+            <div class="use-case">💡 <strong>こう使える：</strong> ChatGPT一択の時代は終わり。Claude・Geminiと使い比べて、自分の用途に合ったAIを選ぶのがトレンドに。</div>
+            <p class="source"><span class="tag tag-social">社会</span> <a href="https://fortune.com/2026/03/02/anthropic-claude-dario-amodei-number-one-app-store-openai-chatgpt-sam-altman-department-war/" target="_blank">Fortune</a></p>
+        </div>
+        <h2 class="section-header tools" id="tools">🛠️ 注目の新機能・サービス</h2>
+        <div class="tool-card"><h4>🎵 Google Lyria 3 — テキストや写真から30秒のオリジナル楽曲を生成</h4><p>Geminiアプリで使える音楽生成機能。「夏の海辺の雰囲気で」と説明するだけ、または写真をアップするだけで30秒のトラックとカバーアートを自動作成。SNSのBGM作りが一気に手軽に。</p><a href="https://blog.google/innovation-and-ai/products/google-ai-updates-february-2026/" target="_blank" class="try-it">→ 詳しく見る</a></div>
+        <div class="tool-card"><h4>🎬 Suno v5 — 人間の感情を再現するAI歌声生成</h4><p>AI音楽生成のSunoがv5に。人間の歌唱感情を高精度にシミュレートし、多層ボーカルにも対応。歌詞を書いてメロディ指定するだけで、感情の乗ったボーカル入り楽曲が完成。</p><a href="https://www.soundverse.ai/blog/article/ai-music-videos-for-social-media-creators-0337" target="_blank" class="try-it">→ 詳しく見る</a></div>
+        <div class="tool-card"><h4>🧠 Claudeメモリインポート — AIの乗り換えがコピペ不要に</h4><p>ChatGPTやGeminiに蓄積した会話の好み・コンテキストをClaudeにワンクリックで移行。「いつもの口調で」「前回の続き」が新しいAIでもすぐ使える。</p><a href="https://atmarkit.itmedia.co.jp/ait/articles/2603/06/news022.html" target="_blank" class="try-it">→ 詳しく見る</a></div>
+        <div class="tool-card"><h4>📱 WordPress公式AIプラグイン — Claude・Gemini・ChatGPTをブログに統合</h4><p>WordPressが主要AI3社の公式プラグインをリリース。記事の下書き生成、SEO最適化、画像キャプション自動生成などをCMS内で直接実行。ブロガーやサイト運営者の執筆ワークフローが変わる。</p><a href="https://www.blogtrafficguide.com/2026/03/05/wordpress-releases-ai-plugins-for-anthropic-claude-google-gemini-and-openai/" target="_blank" class="try-it">→ 詳しく見る</a></div>
+        <h2 class="section-header creative" id="creative">🎨 クリエイティブAI最前線</h2>
+        <div class="creative-card"><h4>クリエイターの87%がAIを活用中 — 使い方の主流は「アイデア出し」と「編集の高速化」</h4><p>Artlistの2026年調査では、37%がアイデア出し、26%が編集の高速化、24%が制作プロセス全体にAIを活用。「AIに置き換えられる」恐怖から「AIと協業して差をつける」フェーズに。ストーリーテリングと人間の創造性の価値はむしろ上がっている。</p></div>
+        <div class="creative-card"><h4>AI動画生成が「映像＋音声＋音楽」の同時生成時代へ</h4><p>最新ツール（Seedance 2.0など）では映像・セリフ・環境音・BGMを一括生成。テキスト・画像・動画クリップ・音声を最大9素材まで同時インプットでき、一貫した作品が出力される。音声を後付けする時代は終わりつつある。</p></div>
+        <div class="creative-card"><h4>ワールドモデル「Marble」公開 — テキストから3D空間を生成</h4><p>Fei-Fei LiのWorld Labsが商用ワールドモデル「Marble」を公開。テキストや画像から3D空間を生成し、カメラアングルを自由に動かせる。ゲーム制作、建築ビジュアライゼーション、バーチャルツアーなど、3Dコンテンツ制作の民主化が始まる。</p></div>
+        <h2 class="section-header jp" id="japan">🇯🇵 日本関連トピック</h2>
+        <div class="jp-card"><h4>日本政府、AI・半導体に7兆円超投資 — 「世界で最もAIを使いやすい国」へ</h4><p>2021〜26年度の累計で政府支援額は7兆円超に。「人工知能基本計画」では「信頼できるAI」を中心に2026年春に官民投資ロードマップを策定予定。日本国内でのAIサービス充実に期待。</p></div>
+        <div class="jp-card"><h4>ソフトバンク × OpenAI合弁「SB OAI Japan」始動</h4><p>ソフトバンクとOpenAIの合弁会社が本格稼働。日本市場に最適化されたAIサービスの展開を目指す。日本語対応の強化や国内データセンターの活用で、より使いやすいAI環境が整いそう。</p></div>
+        <div class="jp-card"><h4>ChatGPT・Claude・Gemini 日本語比較 — 用途別の最適解が明確に</h4><p>複数の比較記事が話題に。画像生成はChatGPT、動画はGemini、PDF大量処理はGemini、長文ライティングと会話はClaudeがそれぞれ強み。1つのAIに固執せず、目的で使い分けるスタイルが日本でも定着しつつある。</p></div>
+        <h2 class="section-header" id="deepdive">💡 知っておくと差がつくポイント</h2>
+        <div class="deep-dive"><h4>「エージェントAI」が本格始動 — AIが自分でツールを使い分ける時代</h4><p>2026年のキーワードは「エージェントAI」。チャットで指示を出すと、AIが自分でブラウザを開き、メールを確認し、スプレッドシートを更新し、結果を報告してくれる。MCP（Model Context Protocol）の普及でAIと外部ツールの接続が簡単になり、「デモ」だった世界が「日常業務」に変わり始めている。</p></div>
+        <div class="deep-dive"><h4>AI選びは「性能」から「信頼」の時代へ</h4><p>ClaudeがApp Storeで1位になった背景には、OpenAIの国防総省契約への反発がある。AIを選ぶ基準が「どれが一番賢いか」から「どの会社を信頼できるか」にシフト中。プライバシーポリシー、データの使われ方、企業の社会的姿勢がAI選びの重要な判断材料になりつつある。</p></div>
+        <div class="info-box" id="reliability">
+            <h3>ℹ️ 情報の信頼性について</h3>
+            <p>信頼性評価（★）の基準：</p>
+            <p style="margin-top: 0.5rem;">★★★★★ = 公式発表・一次ソース、複数メディアで確認済み<br>★★★★☆ = 大手メディアの報道、高い信頼性<br>★★★☆☆ = 単一ソースまたは速報段階</p>
+            <p style="margin-top: 0.5rem;">このダイジェストはAIが生成したものです。重要な意思決定の際は、必ず原典をご確認ください。</p>
+        </div>
+        <footer>
+            <p>AI News Digest — Generated on 2026-03-08</p>
+            <p>Powered by Claude | <a href="index.html">バックナンバー一覧</a></p>
+        </footer>
+    </div>
+</body>
+</html>
